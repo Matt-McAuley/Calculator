@@ -30,3 +30,25 @@ function operate(num1, num2, operator) {
 }
 
 let num1, operator, num2;
+
+const numberButtons = document.querySelectorAll(".numberButton");
+const screen = document.querySelector(".text")
+
+let screenNumber = "";
+
+//Populates screen with numbers
+numberButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+        if (screenNumber.length <= 8) {
+            screenNumber += button.textContent;
+            screen.textContent = screenNumber;
+        }
+    })
+});
+
+//Clears screen of numbers
+const clearButton = document.querySelector(".clearButton");
+clearButton.addEventListener('click', () => {
+    screen.textContent = "";
+    screenNumber = "";
+});

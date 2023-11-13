@@ -26,7 +26,7 @@ body {
     width: 280px;
 }
 
-.button {
+.numberButton, .operatorButton {
     padding: 10px 25px;
     margin: 5px;
     border: 2px solid black;
@@ -38,27 +38,35 @@ body {
     box-shadow: 2px 3px;
 }
 
-.button:hover {
+.numberButton:hover, .operatorButton:hover {
     background-color: rgb(218, 110, 98);
 }
 
-.button:active {
+.numberButton:active, .operatorButton:active {
     box-shadow: 2px 2px;
     transform: translateY(2px);
 }
 
 #screen {
     border: 3px solid black;
-    padding: 75px 150px;
+    padding: 20px;
+    height: 80px;
+    width: 280px;
     margin: 20px;
+    margin-top: 30px;
     background-color: rgba(255, 255, 255, 0.733);
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    font-size: 60px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 #bottom {
     margin-bottom: 15px;
 }
 
-.widebutton {
+.clearButton {
     padding: 10px 50px;
     border: 2px solid black;
     border-radius: 10px;
@@ -69,12 +77,12 @@ body {
     box-shadow: 2px 3px;
 }
 
-.widebutton:active {
+.clearButton:active {
     box-shadow: 2px 2px;
     transform: translateY(2px);
 }
 
-.widebutton:hover {
+.clearButton:hover {
     background-color: rgb(218, 110, 98);
 }
 
