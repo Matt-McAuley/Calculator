@@ -26,23 +26,30 @@ body {
     width: 280px;
 }
 
-.numberButton, .operatorButton {
+.numberButton, .operatorButton, .equalsButton {
     padding: 10px 25px;
     margin: 5px;
     border: 2px solid black;
     border-radius: 10px;
     font-size: large;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    background-color: salmon;
     cursor: pointer;
     box-shadow: 2px 3px;
 }
 
-.numberButton:hover, .operatorButton:hover {
+.operatorButton, .equalsButton{
+    background-color: orange;
+}
+
+.numberButton {
+    background-color: salmon;
+}
+
+.numberButton:hover, .operatorButton:hover , .equalsButton:hover{
     background-color: rgb(218, 110, 98);
 }
 
-.numberButton:active, .operatorButton:active {
+.numberButton:active, .operatorButton:active, .equalsButton:active{
     box-shadow: 2px 2px;
     transform: translateY(2px);
 }
@@ -72,7 +79,7 @@ body {
     border-radius: 10px;
     font-size: large;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    background-color: salmon;
+    background-color: violet;
     cursor: pointer;
     box-shadow: 2px 3px;
 }
