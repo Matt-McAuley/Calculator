@@ -98,3 +98,9 @@ equals.addEventListener('click', () => {
     clearScreen = true;
     equalsPressed = true;
 })
+
+const del = document.querySelector(".deleteButton");
+del.addEventListener('click', () => {
+    screen.textContent = screen.textContent.slice(0,-1);
+    screenNumber = screenNumber.slice(0,-1);
+})
