@@ -49,8 +49,8 @@ numberButtons.forEach((button) => {
         if (equalsPressed) {
             screen.textContent = "";
             screenNumber = "";
-            num1 = 0;
             operator = "+";
+            num1 = 0;
             equalsPressed = false;
         }
         if (clearScreen) {
@@ -79,8 +79,18 @@ let result;
 const operators = document.querySelectorAll(".operatorButton");
 operators.forEach((button) => {
     button.addEventListener('click', (event) => {
-        num2 = Number(screen.textContent);
+        if (equalsPressed) {
+            num2 = 0;
+            equalsPressed = false;
+        }
+        else {
+            num2 = Number(screen.textContent);
+        }
+        console.log("num1: "+num1)
+        console.log("num2: "+num2)
+        console.log("operator: "+operator)
         result = operate(num1, num2, operator);
+        console.log("result: "+result)
         screen.textContent = result;
         num1 = result;
         operator = event.target.textContent;
@@ -91,10 +101,14 @@ operators.forEach((button) => {
 const equals = document.querySelector(".equalsButton");
 equals.addEventListener('click', () => {
     num2 = Number(screen.textContent);
+    console.log("num1: "+num1)
+    console.log("num2: "+num2)
+    console.log("operator: "+operator)
     result = operate(num1, num2, operator);
+    console.log("result: "+result)
     num1 = result;
     screen.textContent = result;
-    operator = "pass";
+    operator = "+";
     clearScreen = true;
     equalsPressed = true;
 })
