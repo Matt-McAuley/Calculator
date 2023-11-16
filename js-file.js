@@ -115,6 +115,26 @@ equals.addEventListener('click', () => {
 
 const del = document.querySelector(".deleteButton");
 del.addEventListener('click', () => {
-    screen.textContent = screen.textContent.slice(0,-1);
-    screenNumber = screenNumber.slice(0,-1);
+    if (String(num1) != screen.textContent) {
+        screen.textContent = screen.textContent.slice(0,-1);
+        screenNumber = screenNumber.slice(0,-1);
+        if (screen.textContent == "-") {
+            screen.textContent = "";
+            screenNumber = "";
+        }
+    }
+    else {
+        screen.textContent = screen.textContent.slice(0,-1);
+        screenNumber = screenNumber.slice(0,-1);
+        if (screen.textContent == "-" || screen.textContent == "") {
+            screen.textContent = "0";
+            screenNumber = "0";
+            num1 = 0;
+            result = 0;
+        }
+        else {
+            num1 = Number(String(num1).slice(0,-1));
+            result = Number(String(result).slice(0,-1));
+        }
+    }
 })
