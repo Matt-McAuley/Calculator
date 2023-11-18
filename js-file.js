@@ -27,9 +27,6 @@ function operate(num1, num2, operator) {
     if (operator == "÷") {
         return divide(num1, num2);
     }
-    if (operator == "pass") {
-        return num1;
-    }
 }
 
 let num2;
@@ -37,6 +34,7 @@ let clearScreen = false;
 let num1 = 0;
 let operator = "+"; 
 let equalsPressed = false;
+let operatorPressed = false;
 
 const numberButtons = document.querySelectorAll(".numberButton");
 const screen = document.querySelector(".text")
@@ -60,7 +58,8 @@ numberButtons.forEach((button) => {
                 screenNumber += button.textContent;
                 screen.textContent = screenNumber;
         }
-            clearScreen = false;
+        clearScreen = false;
+        operatorPressed = false;
     })
 });
 
@@ -72,6 +71,7 @@ clearButton.addEventListener('click', () => {
     num1 = 0;
     operator = "+";
     equalsPressed = false;
+    operatorPressed = false;
 });
 
 //Performs operations
@@ -95,6 +95,7 @@ operators.forEach((button) => {
         num1 = result;
         operator = event.target.textContent;
         clearScreen = true;
+        operatorPressed = true;
     })
 })
 
@@ -111,11 +112,12 @@ equals.addEventListener('click', () => {
     operator = "+";
     clearScreen = true;
     equalsPressed = true;
+    operatorPressed = false;
 })
 
 const del = document.querySelector(".deleteButton");
 del.addEventListener('click', () => {
-    if (String(num1) != screen.textContent) {
+    if (!operatorPressed && !equalsPressed) {
         screen.textContent = screen.textContent.slice(0,-1);
         screenNumber = screenNumber.slice(0,-1);
         if (screen.textContent == "-") {
