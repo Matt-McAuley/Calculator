@@ -83,7 +83,7 @@ clearButton.addEventListener('click', () => {
     equalsPressed = false;
     operatorPressed = false;
     error = false;
-    screen.style.fontSize = "60px";
+    screen.style.fontSize = "55px";
 });
 
 //Performs operations
@@ -105,6 +105,16 @@ operators.forEach((button) => {
         console.log("num2: "+num2)
         console.log("operator: "+operator)
         result = operate(num1, num2, operator);
+        if (String(result).length > 9) {
+            let indexOfDecimal = String(result).indexOf(".")
+            if (indexOfDecimal != -1) {
+                if (indexOfDecimal <= 9) {
+                    console.log("Initial result: " + result);
+                    result = Number(result).toFixed(9-indexOfDecimal);
+                    console.log("Later result: " + result);
+                }
+            }
+        }
         console.log("result: "+result)
         screen.textContent = result;
         num1 = result;
@@ -139,6 +149,16 @@ equals.addEventListener('click', () => {
     console.log("num2: "+num2)
     console.log("operator: "+operator)
     result = operate(num1, num2, operator);
+    if (String(result).length > 9) {
+        let indexOfDecimal = String(result).indexOf(".")
+        if (indexOfDecimal != -1) {
+            if (indexOfDecimal <= 9) {
+                console.log("Initial result: " + result);
+                result = Number(result).toFixed(9-indexOfDecimal);
+                console.log("Later result: " + result);
+            }
+        }
+    }
     console.log("result: "+result)
     num1 = result;
     screen.textContent = result;
