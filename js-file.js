@@ -83,6 +83,7 @@ clearButton.addEventListener('click', () => {
     equalsPressed = false;
     operatorPressed = false;
     error = false;
+    screen.style.fontSize = "60px";
 });
 
 //Performs operations
@@ -110,6 +111,21 @@ operators.forEach((button) => {
         operator = event.target.textContent;
         clearScreen = true;
         operatorPressed = true;
+        if (isNaN(result)) {
+            error = true;
+            screen.textContent = "Syntax Error"
+            screen.style.fontSize = "50px";
+        }
+        else if (!isFinite(result)) {
+            error = true;
+            screen.textContent = "Divide by zero Error";
+            screen.style.fontSize = "35px";
+        }
+        else if (result > 999999999) {
+            error = true;
+            screen.textContent = "Overflow Error"
+            screen.style.fontSize = "45px";
+        }
     })
 })
 
@@ -132,7 +148,18 @@ equals.addEventListener('click', () => {
     operatorPressed = false;
     if (isNaN(result)) {
         error = true;
-        screen.textContent = "Error!"
+        screen.textContent = "Syntax Error"
+        screen.style.fontSize = "50px";
+    }
+    else if (!isFinite(result)) {
+        error = true;
+        screen.textContent = "Divide by zero Error";
+        screen.style.fontSize = "35px";
+    }
+    else if (result > 999999999) {
+        error = true;
+        screen.textContent = "Overflow Error"
+        screen.style.fontSize = "45px";
     }
 })
 
