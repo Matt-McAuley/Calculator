@@ -39,7 +39,8 @@ let operatorPressed = false;
 const numberButtons = document.querySelectorAll(".numberButton");
 const screen = document.querySelector(".text")
 
-let screenNumber = "";
+let screenNumber = "0";
+screen.textContent = "0";
 
 //Populates screen with numbers
 numberButtons.forEach((button) => {
@@ -52,7 +53,12 @@ numberButtons.forEach((button) => {
             equalsPressed = false;
         }
         if (clearScreen) {
-                screenNumber = "";
+                screenNumber = "0";
+        }
+        if (screenNumber == "0") {
+            console.log(screen.textContent)
+            screen.textContent = "";
+            screenNumber = ""
         }
         if (screenNumber.length <= 8) {
                 screenNumber += button.textContent;
@@ -66,8 +72,8 @@ numberButtons.forEach((button) => {
 //Clears screen of numbers
 const clearButton = document.querySelector(".clearButton");
 clearButton.addEventListener('click', () => {
-    screen.textContent = "";
-    screenNumber = "";
+    screen.textContent = "0";
+    screenNumber = "0";
     num1 = 0;
     operator = "+";
     equalsPressed = false;
