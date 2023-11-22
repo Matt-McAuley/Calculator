@@ -176,7 +176,7 @@ equals.addEventListener('click', () => {
         screen.textContent = "Divide by zero Error";
         screen.style.fontSize = "35px";
     }
-    else if (result > 999999999) {
+    else if (result > 999999999 || result < -999999999) {
         error = true;
         screen.textContent = "Overflow Error"
         screen.style.fontSize = "45px";
