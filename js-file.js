@@ -35,6 +35,7 @@ let num1 = 0;
 let operator = "+"; 
 let equalsPressed = false;
 let operatorPressed = false;
+let error = false;
 
 const numberButtons = document.querySelectorAll(".numberButton");
 const screen = document.querySelector(".text")
@@ -45,6 +46,9 @@ screen.textContent = "0";
 //Populates screen with numbers
 numberButtons.forEach((button) => {
     button.addEventListener('click', () => {
+        if (error) {
+            return;
+        }
         if (equalsPressed) {
             screen.textContent = "";
             screenNumber = "";
@@ -78,6 +82,7 @@ clearButton.addEventListener('click', () => {
     operator = "+";
     equalsPressed = false;
     operatorPressed = false;
+    error = false;
 });
 
 //Performs operations
@@ -85,6 +90,9 @@ let result;
 const operators = document.querySelectorAll(".operatorButton");
 operators.forEach((button) => {
     button.addEventListener('click', (event) => {
+        if (error) {
+            return;
+        }
         if (equalsPressed) {
             num2 = 0;
             equalsPressed = false;
@@ -107,6 +115,9 @@ operators.forEach((button) => {
 
 const equals = document.querySelector(".equalsButton");
 equals.addEventListener('click', () => {
+    if (error) {
+        return;
+    }
     num2 = Number(screen.textContent);
     console.log("num1: "+num1)
     console.log("num2: "+num2)
@@ -119,10 +130,17 @@ equals.addEventListener('click', () => {
     clearScreen = true;
     equalsPressed = true;
     operatorPressed = false;
+    if (isNaN(result)) {
+        error = true;
+        screen.textContent = "Error!"
+    }
 })
 
 const del = document.querySelector(".deleteButton");
 del.addEventListener('click', () => {
+    if (error) {
+        return
+    }
     if (!operatorPressed && !equalsPressed) {
         screen.textContent = screen.textContent.slice(0,-1);
         screenNumber = screenNumber.slice(0,-1);
