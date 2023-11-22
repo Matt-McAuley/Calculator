@@ -7,6 +7,6 @@ For this project, I designed a basic scientific calculator within the browser. I
 https://matt-mcauley.github.io/calculator
 
 # Author
-Matthew McAuley
-mwm223@cornell.edu
+Matthew McAuley  
+mwm223@cornell.edu  
 https://github.com/matt-mcauley/calculator
