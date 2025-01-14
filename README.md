@@ -1,1 +1,1 @@
-https://matt-mcauley.github.io/projects/calculator
+https://matt-mcauley.github.io/projects/Calculator
