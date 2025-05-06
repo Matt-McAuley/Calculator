@@ -19,7 +19,16 @@ The website is hosted on [GitHub Pages](https://matt-mcauley.github.io/Calculato
 ## Images
 
 #### Home Page
-<img src="https://matt-mcauley.github.io/assets/img/Calculator/home.png" alt="Home Page Image" style="width: 95%">
+<img src="https://mattmcauley.com/assets/projects/Calculator/home.png" alt="Image" style="width: 95%">
+
+#### Doing Calculations
+<img src="https://mattmcauley.com/assets/projects/Calculator/number.png" alt="Image" style="width: 95%">
+
+#### Divide by Zero
+<img src="https://mattmcauley.com/assets/projects/Calculator/zero.png" alt="Image" style="width: 95%">
+
+#### Overflow
+<img src="https://mattmcauley.com/assets/projects/Calculator/overflow.png" alt="Image" style="width: 95%">
 
 ## Authors
 
