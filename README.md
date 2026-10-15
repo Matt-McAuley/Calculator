@@ -5,7 +5,7 @@
 - [Summary](#summary)
 - [Online Hosting](#online-hosting)
 - [Images](#images)
-- [Authors](#authors)
+- [Author](#author)
 
 ## Summary
 For this project, I designed a basic scientific calculator within the browser. It allows for division, multiplication, 
@@ -30,13 +30,7 @@ The website is hosted on [GitHub Pages](https://matt-mcauley.github.io/Calculato
 #### Overflow
 <img src="https://mattmcauley.com/assets/projects/Calculator/overflow.png" alt="Image" style="width: 95%">
 
-## Authors
+## Author
 
-<table style="border-collapse: collapse; border:none;">
-  <tr  style="border:none;">
-    <td style="border:none;"><strong>Matthew McAuley</strong></td>
-  </tr>
-  <tr style="border:none;">
-    <td style="border:none;">mwm223@cornell.edu</td>
-  </tr>
-</table>
+[Matt McAuley](https://mattmcauley.com) | Software Engineer | Cornell Computer Science  
+mwm223@cornell.edu
